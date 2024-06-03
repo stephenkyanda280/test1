@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>colloborative Discusion Two</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+                <h1 style="font-weight: lighter; font-size: medium;"><a href="index.html">E-Portfolio | <span style="color: #9ed0ff">Najeebat Ahmed</span></a></h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="Modulereflection.html" class="active">Main Reflection</a></li>
+						<li><a href="#">Elements</a></li>
+                        <!-- <li><a href="colloborativetwo.html">Elements</a></li> -->
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">PyTest</h1>
+							<p><span class="image left"><img src="./images/Discussion2.JPG" alt="" /></span>
+								<h4>Learning PyTest </h4>
+In Unit 6, we delved into the world of PyTest, a powerful testing framework for Python applications. 
+We were provided with a simple Wallet class and a set of unit tests that initially passed. Our task was to
+ modify the code in a way that would cause these tests to fail. This exercise not only reinforced our understanding of PyTest but also highlighted the importance of robust testing in software development.
+
+							</p>
+							<h4>The Challenge</h4>
+<p>The challenge seemed straightforward at first glance: "Amend the code so that the tests fail." However, upon closer inspection, the task lacked clarity regarding whether we should modify the Wallet class implementation or the test suite itself. This ambiguity prompted me to explore various approaches and consider the implications of each approach.
+
+Initially, I examined the Wallet class implementation and identified potential areas for improvement. For instance, the code did not perform any input validation, allowing negative numbers, floating-point values, or even strings to be passed as arguments. While this could be a design choice (following the principle of "duck typing"), it raised concerns about potential unintended behaviors. </p>
+<pre><code>
+def __init__(self, initial_amount=0):
+    self.balance = initial_amount
+</code></pre>
+Additionally, there was no limit on the number of digits that could be added or subtracted from the balance, which might lead to precision issues or unexpected results.
+To address these concerns, I considered modifying the Wallet class to include input validation and limit the number of decimal places. However, this approach would have required significant changes to the existing codebase, potentially introducing new bugs or breaking existing functionality.
+<h4>Exploring PyTest Features<h4>
+
+<p>Instead of modifying the Wallet class, I decided to focus on the test suite itself. PyTest offers a rich set 
+    of features and utilities that can help developers write more comprehensive and robust tests. One approach
+     I explored was modifying the existing test cases to introduce edge cases or boundary conditions that could 
+     potentially break the Wallet class implementation.</p>
+
+<p>Here's an example of how I modified the <code>
+test_wallet_add_cash  </code>function to test for unexpected inputs:
+<pre><code>def test_wallet_add_cash():
+    wallet = Wallet('o')
+    wallet.add_cash('h')
+    assert wallet.balance == 'oh'
+</code></pre>
+In this modified test, I initialized the Wallet with a string value ('o') and attempted to add another string
+ ('h'). While this behavior might be intentional (following duck typing), it highlighted the lack of input 
+ validation in the Wallet class implementation.
+
+Another approach I explored was leveraging PyTest's exception handling capabilities. For instance, 
+in the <code>test_wallet_spend_cash_raises_exception_on_insufficient_amount </code> function, I commented out 
+the <code>pytest.raises </code> context manager and attempted to spend a large floating-point value:</p>
+<pre><code>
+def test_wallet_spend_cash_raises_exception_on_insufficient_amount():
+    wallet = Wallet(100)
+    # with pytest.raises(InsufficientAmount):
+    wallet.spend_cash(0.845623548161321516812)
+    assert wallet.balance == 100 - 0.845623548161321516812
+</code></pre>
+<p>This modification exposed potential precision issues when dealing with floating-point numbers and tested the Wallet class's behavior in such scenarios. <p>
+
+<h4>Real-World Implications and Challenges</h4>
+<p>
+
+The exercise of modifying code to break existing tests might seem counterintuitive, but it highlights the importance of comprehensive testing in real-world software development. As software systems become more complex and requirements evolve, it's crucial to ensure that existing functionality remains intact while introducing new features or modifications. </p>
+
+<p>
+
+One of the challenges I faced during this exercise was striking a balance between modifying the code and maintaining its original functionality. While introducing edge cases or boundary conditions can help identify potential issues, it's essential to ensure that the modifications do not fundamentally alter the intended behavior of the system.
+
+In real-world scenarios, developers often work on existing codebases with established test suites. Modifying code in a way that breaks existing tests can be a double-edged sword. On one hand, it can reveal potential issues or gaps in the test coverage, prompting the addition of more comprehensive tests. On the other hand, it can introduce regressions or unintended consequences, potentially destabilizing the codebase. </p>
+
+<h4>Conclusion </h4>
+<p>
+In conclusion, Unit 6 provided a hands-on experience with PyTest and highlighted the importance of robust testing in software development. While the initial task seemed straightforward, it prompted me to explore various approaches and consider the implications of each approach. Through this exercise, I gained a deeper understanding of PyTest's capabilities and the challenges associated with modifying code while maintaining existing functionality.
+The real-world implications of this exercise cannot be overstated. As software systems become increasingly complex, comprehensive testing is crucial for ensuring reliability, maintainability, and the successful delivery of new features. By embracing best practices such as version control, TDD, CI/CD, and code reviews, developers can effectively manage code modifications, identify potential issues early, and ensure the overall stability and quality of their software projects. </p>
+
+						</div>
+					</section>
+
+			</div>
+			<div id="wrapper">
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<div class="split style1">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="" class="button submit">Send Message</a></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>42 Primrose Lane
+										Sutton Coldfield<br />
+										West Midlands, B13 9PU<br />
+									United Kingdom</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="#">najeebatahmed2@gmail.com</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>(000) 000-0000</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="najeebatahmed2@gmail.com" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+	</div>
+
+<!-- Footer -->
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy;  All rights reserved.</li></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

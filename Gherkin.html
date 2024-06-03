@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title style="font-size: medium;">Gherkin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1 style="font-weight: lighter; font-size: medium;"><a href="index.html">E-Portfolio | <span style="color: #9ed0ff">Najeebat Ahmed</span></a></h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="Modulereflection.html" class="active">Main Reflection</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Gherkin Language and statements</h1>
+							
+							<p style="font-family:Verdana, Geneva, Tahoma, sans-serif; margin: 0, 20%, 0, 20%;"> <span class="image left">
+								<img src="./images/learningoutcome1.JPG" alt="" /></span> 
+								<h3>Gherkin Language and Gherkin statements:</h3> 
+
+                                    Gherkin is a plain language that uses a set of special keywords to describe software behavior in a 
+                                    way that is readable by both technical and non-technical stakeholders. It is the language used to write 
+                                    Cucumber test scripts, which are a critical part of Behavior-Driven Development (BDD). Gherkin statements,
+                                    written in the Gherkin syntax, follow the structure of "Given" some preconditions, "When" some action is taken,
+                                    and "Then" the expected outcome should occur. These statements are organized into "Scenarios" that represent 
+                                    concrete examples of desired behavior. Additional keywords like "And", "But", and "Background" allow for more 
+                                    complex scenarios and shared setup steps. The purpose of Gherkin is to bridge communication gaps by providing 
+                                    a collaborative and living documentation of software requirements that can also drive test automation.</p>
+							<h3>Gherkin Statements Usage</h3>
+                            <p>I have derived 3 Gherkin statements describing interactions with a new washing 
+                                machine In these Gherkin statements, I've outlined expected behaviors for loading 
+                                the washing machine, selecting a wash cycle, and starting that cycle. 
+                                The Given/When/Then structure allows us to describe the preconditions, actions taken, and expected outcomes in a readable way. This can help ensure the new washing machine meets key requirements during development and testing. The scenario examples cover basic interactions like opening the door, detecting a load, choosing a cycle, 
+                                adding detergent, and starting the wash with appropriate display confirmations.</p>
+                            <p>
+                                <h5>Gherkin Statement 1: Loading the Washing Machine
+                                </h5>
+                                <blockquote>
+                                    <b>Feature: </b>Loading the Washing Machine<br>
+
+                                     <b>Scenario:</b>Loading clothes into an empty washing machine<br>
+                                    <b>Given </b> the washing machine is empty<br>
+                                     <b>When </b>the user opens the door<br>
+                                     <b>And </b>adds clothes to the drum<br>
+                                     <b>And </b>closes the door<br>
+                                     <b>Then </b>the display should show "Load Detected"<br>
+                                </blockquote>
+                                <h5>Gherkin Statement 2: Selecting a Wash Cycle
+                                </h5>
+                                <blockquote>
+                                    <b>Feature:</b> Selecting a Wash Cycle<br>
+
+                                     <b>Scenario :</b>Choosing a wash cycle<br>
+                                     <b>Given </b>the washing machine has clothes loaded<br>
+                                     <b>When </b>the user presses the "Cycles" button
+                                     <b>Then </b>the display should show available wash cycles<br>
+                                     <b>When </b>the user selects a cycle like "Normal"<br>
+                                     <b>Then </b>the display should confirm "Normal Cycle Selected" <br>
+
+                                </blockquote>
+                                <h5>Gherkin Statement 3: Starting the Wash
+                                </h5>
+                                <blockquote>
+                                    <b>Feature: </b>Starting the Wash Cycle <br> 
+
+                                    <b>Scenario: </b> User starts the selected wash cycle <br>
+                                         <b>Given</b> a wash cycle is selected<br>
+                                         <b>And</b> detergent has been added<br>
+                                         <b>When</b> the user presses the "Start" button<br>
+                                         <b>Then</b> the washing machine should begin the selected cycle<br>
+                                         <b>And</b> the display should show time remaining<br>
+                                         <b>And</b> progress indicators should activate<br>
+                                </blockquote>
+                            </p>
+						     <h4>Take Way</h4>
+                             <ul>
+                                
+                                <li>The diagram also includes a section for my reflections on Gherkin:</li>
+
+                                    <li> It provides a readable format for non-technical stakeholders to understand requirements.</li>
+                                        <li>It facilitates communication and collaboration between team members.</li>
+                                            <li> It enables Behavior-Driven Development (BDD), where tests are written before the code.</li>
+                                    <li>Scenarios serve as living documentation, describing the expected behavior of the system.</li>
+                                                    <li>It simplifies the creation and maintenance of test cases.</li>
+                                                        <li>Gherkin promotes modular and reusable test design.</li>
+                                                            <li>It helps identify edge cases and missing requirements during the development process.</li>
+                                                                <li>Gherkin scenarios can be used for automated testing and Continuous Integration pipelines.</li>
+
+Overall, the diagram summarizes the key concepts of Gherkin and highlights its benefits for software development teams, emphasizing its role in improving communication, documentation, and testing practices.
+                             </ul>
+							
+						</div>
+					</section>
+
+			</div>
+			<h1 class="major"></h1>
+			<div id="wrapper">
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<div class="split style1">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="" class="button submit">Send Message</a></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>42 Primrose Lane
+										Sutton Coldfield<br />
+										West Midlands, B13 9PU<br />
+									United Kingdom</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="#">najeebatahmed2@gmail.com</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<span>(000) 000-0000</span>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="najeebatahmed2@gmail.com" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+	</div>
+
+<!-- Footer -->
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy;  All rights reserved.</li></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
